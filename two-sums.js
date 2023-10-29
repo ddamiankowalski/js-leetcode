@@ -1,3 +1,5 @@
+import { measurePerformance } from "./perfmance-utils/performance";
+
 /**
  * Two sum approach (greedy, i guess)
  * @param {number[]} nums 
@@ -44,16 +46,10 @@ const inputArr = [];
 for (let i = 0; i < arrLength; i++) {
     inputArr.push(Math.floor(Math.random() * arrLength));
 }
-
 const target = Math.floor(Math.random() * arrLength);
 
-const startMap = performance.now();
-mapTwoSum(inputArr, target)
-const endMap = performance.now() - startMap;
+const twoSumTime = measurePerformance(() => twoSum(inputArr, target));
+const mapTwoSumTime = measurePerformance(() => mapTwoSum(inputArr, target));
 
-const start = performance.now();
-twoSum(inputArr, target)
-const end = performance.now() - start;
-
-console.log(`Time for simple twoSum: ${end} \nTime for map twoSum: ${endMap}`);
+console.log(`Time for simple twoSum: ${twoSumTime} \nTime for map twoSum: ${mapTwoSumTime}`);
 
