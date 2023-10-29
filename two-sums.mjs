@@ -1,4 +1,4 @@
-import { measurePerformance } from "./perfmance-utils/performance";
+import { measurePerformance } from "./perfmance-utils/performance.mjs";
 
 /**
  * Two sum approach (greedy, i guess)
